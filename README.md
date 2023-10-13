@@ -68,9 +68,30 @@ C_m = \text{Aggregate}_{\text{model}}(C_{m,g_1}, C_{m,g_2}, \ldots, C_{m,g_{|G|}
 Where:
 - $`\text{Aggregate}_{\text{group}}$ and $\text{Aggregate}_{\text{model}}`$ are general functions to aggregate evaluation metrics per group and across the model, respectively. An example implementation can be the average.
 
-### 4. Optimization
+### 4. Grouping
 
-We search for the grouping rule $g$ that minimizes the cost function $C_m$. Specifically, we generate grouping rules using different feature combinations, calculate the cost function for each rule, and select the rule that results in the lowest cost.
+The process of grouping involves transforming data samples, characterized by their features and possibly meta-information, into a specific group index. This mapping can be represented by a function parameterized by $\theta$:
+
+```math
+G_i = g_{\theta}(x_i, m_i)
+```
+
+Where:
+- $G_i$ represents the group index for the $i$-th sample.
+- $x_i$ is the vector of features for the $i$-th sample.
+- $m_i$ denotes the meta-information associated with the $i$-th sample.
+- $g_{\theta}$ is the grouping function, parameterized by $\theta$, determining the group index based on features and meta-information.
+
+### 5. Optimization
+
+We aim to find the parameter $\theta$ that minimizes our cost function $C$ by adjusting our grouping function $g_{\theta}$. Specifically, by changing $\theta$, we generate different grouping rules and calculate the cost function for each. We select the $\theta$ that results in the lowest cost:
+
+```math
+\theta^* = \arg\min_{\theta} C = \arg\min_{\theta} \text{Aggregate}_{\text{grouping}}(C_{m1}, C_{m2}, \ldots)
+```
+
+By finding $\theta^*$, we determine the optimal grouping rule.
+
 
 ## Installation
 
