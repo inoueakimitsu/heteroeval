@@ -33,18 +33,18 @@ pip install git+https://github.com/inoueakimitsu/heteroeval
 
 For a given model $m$, regime $r$, group $G$, and data point $i$, we calculate the evaluation metric using a generic function $F$.
 
-$$
+```math
 E_{m,r,G} = F(y_{m,r,i}, \hat{y}_{m,r,i})
-$$
+```
 
 Where:
 - $E_{m,r,G}$ represents the evaluation metric for model $m$, regime $r$, and group $G$.
 - $y_{m,r,i}$ and $\hat{y}_{m,r,i}$ denote the true value and predicted value, respectively.
 - $F$ is a general function to compute the evaluation metric. As an example, the squared error can be used and is represented as:
 
-$$
+```math
 F(y, \hat{y}) = \frac{1}{N_{r,G}} \sum_{i \in I_{r,G}} (y_{m,r,i} - \hat{y}_{m,r,i})^2
-$$
+```
 
 Here, $I_{r,G}$ is the index set for regime $r$ and group $G$.
 
@@ -52,9 +52,9 @@ Here, $I_{r,G}$ is the index set for regime $r$ and group $G$.
 
 Given a grouping rule $g$, we compute the variation in evaluation metrics for each group $G$.
 
-$$
-V_{m,g,G} = \text{Aggregate}_{\text{inter-regime}}(E_{m,r_1,G}, E_{m,r_2,G}, \ldots, E_{m,r_{K},G})
-$$
+```math
+V_{m, g, G} = \text{Aggregate}_{\text{inter-regime}}(E_{m,r_1,G}, E_{m,r_2,G}, \ldots, E_{m,r_{K},G})
+```
 
 Where:
 - $\text{Aggregate}_{\text{inter-regime}}$ is a general function to aggregate evaluation metrics across regimes. An example implementation can be the standard deviation.
@@ -63,16 +63,16 @@ Where:
 
 The cost function calculates the average of the evaluation metric variations $V_{m,g,G}$ for each group $G$ for a model $m$, and then aggregates these results across the model.
 
-$$
+```math
 C_{m,g} = \text{Aggregate}_{\text{group}}(V_{m,g,G_1}, V_{m,g,G_2}, \ldots, V_{m,g,G_{|G|}})
-$$
+```
 
-$$
+```math
 C_m = \text{Aggregate}_{\text{model}}(C_{m,g_1}, C_{m,g_2}, \ldots, C_{m,g_{|G|}})
-$$
+```
 
 Where:
-- $\text{Aggregate}_{\text{group}}$ and $\text{Aggregate}_{\text{model}}$ are general functions to aggregate evaluation metrics per group and across the model, respectively. An example implementation can be the average.
+- $`\text{Aggregate}_{\text{group}}$ and $\text{Aggregate}_{\text{model}}`$ are general functions to aggregate evaluation metrics per group and across the model, respectively. An example implementation can be the average.
 
 ### 4. Optimization
 
