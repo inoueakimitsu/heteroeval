@@ -31,7 +31,7 @@ pip install git+https://github.com/inoueakimitsu/heteroeval
 
 ## Usage
 
-only call find_best_grouping(), like this:
+only call `find_best_grouping()`, like this:
 
 ```python
 from heteroeval import find_best_grouping
