@@ -1,6 +1,6 @@
 # heteroeval
 
-<img src="https://github.com/inoueakimitsu/heteroeval/assets/2350154/07ebbf9b-7c1a-400f-8fbd-91af0449e867" width="30%">
+<img src="https://github.com/inoueakimitsu/heteroeval/assets/2350154/7f4a8f92-2136-4442-aeb1-4737a5807f3d" width="50%">
 
 [![Build Status](https://app.travis-ci.com/inoueakimitsu/heteroeval.svg?branch=main)](https://app.travis-ci.com/inoueakimitsu/heteroeval)
 <a href="https://github.com/inoueakimitsu/heteroeval/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/inoueakimitsu/heteroeval"></a>
