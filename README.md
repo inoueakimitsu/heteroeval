@@ -36,7 +36,17 @@ only call find_best_grouping(), like this:
 ```python
 from heteroeval import find_best_grouping
 
-find_best_grouping(n_models, regimes, X, y_true, y_pred_for_each_model, evaluation_measure, inter_regime_variation_measure, groupwise_variation_measure_aggregate_function, modelwise_variation_measure_aggregate_function, cost_function, optimizer)
+find_best_grouping(
+    n_models,
+    regimes,
+    X, y_true,
+    y_pred_for_each_model,
+    evaluation_measure,
+    inter_regime_variation_measure,
+    groupwise_variation_measure_aggregate_function,
+    modelwise_variation_measure_aggregate_function,
+    cost_function,
+    optimizer)
 
 ```
 
